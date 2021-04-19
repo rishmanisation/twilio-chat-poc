@@ -1,27 +1,55 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Twilio Chat Quickstart</title>
-    <link rel="shortcut icon" href="//www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'twilio/index.css' %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="//www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css" />
+  <style>
+    .rounded-edges {
+      border-radius: 0.25rem;
+    }
+  </style>
+  <title>All Chat Rooms</title>
 </head>
+
 <body>
-  <header>
-    <a href="https://www.twilio.com/docs/api/chat/guides/quickstart-js"
-      target="_blank">Read the getting started guide
-        <i class="fa fa-fw fa-external-link"></i>
-    </a>
-  </header>
-
-  <section>
-    <div id="messages"></div>
-    <input id="chat-input" type="text" placeholder="say anything" autofocus/>
+  <section class="hero is-info">
+    <div class="hero-body has-text-centered">
+      <div class="container">
+        <h1 class="title is-2">
+          Twilio Chat
+        </h1>
+        <h2 class="subtitle is-5">
+          An exploration into Twilio Programmable Chat.
+          <br/> Join one of the rooms below to start your adventure
+        </h2>
+      </div>
+    </div>
   </section>
-
-  <script src="https://media.twiliocdn.com/sdk/js/chat/releases/4.0.0/twilio-chat.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="{% static 'twilio/index.js' %}"></script>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        {% for room in rooms %}
+        <div class="column">
+          <div class="card rounded-edges">
+            <div class="card-content">
+              <p class="title is-4">{{room.name}}</p>
+              <div class="content">
+                <p>
+                  {{room.description}}
+                </p>
+                <a href="/rooms/{{room.slug}}" class="button">Join Room</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 </body>
 </html>
