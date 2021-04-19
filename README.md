@@ -1,6 +1,8 @@
 # twilio-chat-poc
 
-Proof of concept chat application using the Twilio API. Implementation based from https://www.twilio.com/blog/2018/03/python-django-twilio-programmable-chat-application.html.
+Proof of concept chat application using the Twilio API.
+
+Basic text chat functionality implemented by following https://www.twilio.com/blog/2018/03/python-django-twilio-programmable-chat-application.html.
 
 What works:
 
