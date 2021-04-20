@@ -48,7 +48,7 @@ def token(request):
         token.add_grant(VideoGrant(room='My Room'))
         token.add_grant(ChatGrant(service_sid=conversation.chat_service_sid))
 
-        return {'token': token.to_jwt().decode('utf-8')}
+        return JsonResponse({'token': token.to_jwt().decode('utf-8')})
 
 
 def get_chatroom(name):

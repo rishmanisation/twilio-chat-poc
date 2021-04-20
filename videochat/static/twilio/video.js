@@ -48,7 +48,7 @@ function connect(username) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ 'username': username })
-        }).then((res) => { return res; }).then(data => {
+        }).then(res => res.json()).then(data => {
             // join video call
             return Twilio.Video.connect(data.token);
         }).then(_room => {
