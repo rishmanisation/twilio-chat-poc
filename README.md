@@ -15,11 +15,13 @@ What works:
 
 1. Basic text chatting
 
+2. Basic video chatting
+
 To be done: 
 
 1. Voice chat
 
-2. Video chat
+2. Landing page for choosing chat type
 
 
 ## Setup
@@ -61,11 +63,22 @@ TWILIO_API_SID='<API SID>'
 TWILIO_API_SECRET='<API Secret>'
 ```
 
-4. Run the migrations and then start the server. Open your browser and navigate to http://127.0.0.1:8080.
+4. Run the migrations and then start the server. Open your browser and navigate to http://127.0.0.1:8080/chat.
 
 ```
 python manage.py migrate OR honcho run ./manage.py migrate
 python manage.py runserver OR honcho run ./manage.py runserver
 ```
 
+### BELOW STEPS ARE FOR VIDEO CHAT ONLY
+
+5. Video chat works only over HTTPS. Hence, we need to set up ngrok prior to running our code. Install ngrok from https://www.ngrok.io and unzip the file. Then, navigate to the directory you unzipped the file to and run
+
+```
+./ngrok http 8000
+```
+
+6. Copy the https FQDN and paste it into APPROVED_HOSTS in settings.py.
+
+7. You can now start the server as described above. Once done, open the URL and navigate to https://\<ngrok FQDN>/video. Sign in using your name, then open the URL on another device and sign in again.
 

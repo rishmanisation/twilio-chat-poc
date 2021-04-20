@@ -44,9 +44,6 @@ function connect(username) {
         // get a token from the back end
         fetch('/video/token', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
             body: JSON.stringify({ 'username': username })
         }).then(res => res.json()).then(data => {
             // join video call
