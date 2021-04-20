@@ -13,12 +13,14 @@ from twilio.jwt.access_token.grants import (
 from .models import Room
 
 def all_rooms(request):
+    print("All Rooms Triggered")
     rooms = Room.objects.all()
-    return render(request, 'twilio/index.html', {'rooms': rooms})
+    return render(request, 'twilio/index.html', { 'rooms': rooms })
 
 def room_detail(request, slug):
+    print("Room Detail Triggered")
     room = Room.objects.get(slug=slug)
-    return render(request, 'twilio/chat.html', {'room': room})
+    return render(request, 'twilio/chat.html', { 'room': room })
 
 def token(request):
     fake = Factory.create()

@@ -2,7 +2,14 @@
 
 Proof of concept chat application using the Twilio API.
 
-Basic text chat functionality implemented by following https://www.twilio.com/blog/2018/03/python-django-twilio-programmable-chat-application.html.
+Implementation is based on the following resources:
+1. Building a Django Twilio Programmable Chat Application, Michael Jenkins: https://www.twilio.com/blog/2018/03/python-django-twilio-programmable-chat-application.html.
+
+2. How to Build Chat into Django Applications with Twilio Programmable Chat, Kevin Ndung'u: https://www.twilio.com/blog/2018/05/build-chat-python-django-applications-programmable-chat.html
+
+3. Build a Video Chat Application with Python, JavaScript and Twilio Programmable Video, Miguel Grinberg: https://www.twilio.com/blog/build-video-chat-application-python-javascript-twilio-programmable-video
+
+## Feature list and to-dos
 
 What works:
 
@@ -15,7 +22,7 @@ To be done:
 2. Video chat
 
 
-# Setup
+## Setup
 
 1. Clone the project
 

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-x7&ha412ohoc0=emwwzl9x#3xf@ry7m)ov^*yj)ly-+uehm18a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'e1a3c7144f9e.ngrok.io']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'chatapp'
+    'chatapp',
+    'videochat'
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'twiliochat.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
